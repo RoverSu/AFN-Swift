@@ -12,14 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        NetworkTools.sharedTools.request(RequestMethod.GET, URLString: "http://httpbin.org/get", parametes: ["name": "wanglaowu"]) { (result, error) in
+            print(result)
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        print(NetworkTools.sharedTools)
     }
-
-
 }
 
